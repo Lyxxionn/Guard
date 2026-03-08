@@ -1,0 +1,16 @@
+name: Guard
+main: me.lyxxion.guard.Main
+version: 1.0.0
+api: ["2.0.0"]
+author: Lyxxion
+description: Global guard settings
+commands:
+  guard:
+    description: Opens the guard settings menu
+    usage: /guard [menu|debug|bypass|next]
+    permission: guard.command
+permissions:
+  guard.command:
+    default: true
+  guard.perm:
+    default: false

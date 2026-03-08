@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+}
+
+group = 'me.lyxxion.guard'
+version = '1.0.0'
+
+sourceCompatibility = '17'
+targetCompatibility = '17'
+
+def serverRoot = projectDir.parentFile.parentFile
+def powernukkitJar = file("${serverRoot}/powernukkitx.jar")
+
+repositories {
+    flatDir {
+        dirs(serverRoot)
+    }
+}
+
+dependencies {
+    compileOnly files(powernukkitJar)
+}
+
+jar {
+    archiveBaseName.set('Guard')
+    from('plugin.yml')
+    manifest {
+        attributes(
+            'Implementation-Title': 'Guard',
+            'Implementation-Version': version
+        )
+    }
+}
